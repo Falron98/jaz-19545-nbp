@@ -19,6 +19,7 @@ public class NBPRestController {
     public ResponseEntity<NBP> getCurrency(@PathVariable("crn") String currency,
                                            @RequestParam Date startdate,
                                            @RequestParam Date enddate){
+
         return ResponseEntity.ok(nbpService.getNBP(currency, startdate, enddate));
     }
 }
