@@ -1,18 +1,23 @@
 package pl.pjwstk.jaz19545nbp;
 
+import java.sql.Date;
 import java.util.List;
 
 public class Rate {
     private String no;
-    private String effectiveDate;
+    private Date effectiveDate;
     private double mid;
 
     public Rate(){};
 
-    public Rate(String no, String effectiveDate, double mid) {
+    public Rate(String no, Date effectiveDate, double mid, String table, String currency, String code, List<Rate> rates) {
         this.no = no;
         this.effectiveDate = effectiveDate;
         this.mid = mid;
+        this.table = table;
+        this.currency = currency;
+        this.code = code;
+        this.rates = rates;
     }
 
     public String getNo() {
@@ -23,11 +28,11 @@ public class Rate {
         this.no = no;
     }
 
-    public String getEffectiveDate() {
+    public Date getEffectiveDate() {
         return effectiveDate;
     }
 
-    public void setEffectiveDate(String effectiveDate) {
+    public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
@@ -39,20 +44,10 @@ public class Rate {
         this.mid = mid;
     }
 
-    public class Root {
         private String table;
         private String currency;
         private String code;
         private List<Rate> rates;
-
-        public Root(){};
-
-        public Root(String table, String currency, String code, List<Rate> rates) {
-            this.table = table;
-            this.currency = currency;
-            this.code = code;
-            this.rates = rates;
-        }
 
         public String getTable() {
             return table;
@@ -87,4 +82,3 @@ public class Rate {
         }
     }
 
-}

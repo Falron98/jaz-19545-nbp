@@ -19,10 +19,11 @@ public class NBPService {
     }
 
 
-    public NBP getNBP(String crn, Date startdate, Date enddate){
+    public Rate getNBP(String crn, Date startdate, Date enddate){
         String url = NBPServiceAddress + "a/" + crn + "/" + startdate + "/" + enddate + "/";
-        NBP nbp = restTemplate.getForObject(url, NBP.class);
-        nbpRepository.save(nbp);
-        return nbp;
+        Rate rate = restTemplate.getForObject(url, Rate.class);
+        NBP nbp = new NBP();
+
+        return rate;
     }
 }

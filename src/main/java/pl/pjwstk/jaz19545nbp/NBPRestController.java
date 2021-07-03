@@ -16,7 +16,7 @@ public class NBPRestController {
     }
 
     @GetMapping("/{crn}")
-    public ResponseEntity<NBP> getCurrency(@PathVariable("crn") String currency,
+    public ResponseEntity<Rate> getCurrency(@PathVariable("crn") String currency,
                                            @RequestParam Date startdate,
                                            @RequestParam Date enddate){
 
